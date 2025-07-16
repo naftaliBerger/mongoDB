@@ -1,6 +1,7 @@
 import e from "express";
 import { getAllriddels, addriddels ,updateRiddelById,deleteRiddleById} from "../DAL/dal.js";
 
+//====================================
 export async function getRiddels(req, res) {
   try {
     const riddels = await getAllriddels();
@@ -9,7 +10,7 @@ export async function getRiddels(req, res) {
     res.status(500).json({ error: "Failed to get products" });
   }
 }
-
+//====================================
 export async function createRiddels(req, res) {
   try {
     const result = await addriddels(req.body);
@@ -19,6 +20,7 @@ export async function createRiddels(req, res) {
   }
 }
 
+//====================================
 export async function updateRiddels(req, res) {
    try {
     const id = req.params.id;
@@ -29,6 +31,7 @@ export async function updateRiddels(req, res) {
   }
 }
 
+//====================================
 export async function deleteRiddle(req, res) {
   try {
     const id = req.params.id;
