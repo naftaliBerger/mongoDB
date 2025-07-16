@@ -1,9 +1,12 @@
 import express from "express";
-import { getProducts, createProduct } from "../controllers/riddelsControllers.js";
+import { getRiddels, createRiddels,updateRiddels,deleteRiddle } from "../controllers/riddelsControllers.js";
 
 const router = express.Router();
 
-router.get("/", getProducts);
-router.post("/", createProduct);
+router.get("/", getRiddels);
+router.post("/", createRiddels);
+router.put("/:id", updateRiddels);
+router.delete("/:id", deleteRiddle);
+
 
 export default router;
