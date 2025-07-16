@@ -4,7 +4,7 @@ config();
 const client = new MongoClient(process.env.DB_COMMECTION);
 let db;
 
-export async function connect() {
+export async function connectDB() {
     if (!db) {    
         await client.connect();
         db = client.db();
@@ -12,5 +12,5 @@ export async function connect() {
     }
     return db;
 }
-connect();
+connectDB();
 export default db;
